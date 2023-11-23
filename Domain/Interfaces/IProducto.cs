@@ -6,5 +6,7 @@ using Domain.Entities;
 
 namespace Domain.Interfaces
 {
-    public interface IProducto : IGenericString<Producto> { }
+    public interface IProducto : IGenericString<Producto> { 
+        Task<IEnumerable<Producto>> ProductosQueNoHanEstadoEnPedidos ();
+    }
 }

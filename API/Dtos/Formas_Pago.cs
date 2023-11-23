@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.Entities;
 
-namespace Domain.Interfaces
+namespace API.Dtos
 {
-    public interface IPedido : IGenericInt<Pedido>
+    public class Formas_Pago
     {
+        public string Forma_Pago { get; set; }
     }
 }

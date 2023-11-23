@@ -11,8 +11,10 @@ namespace Application.Repositories
 {
     public class PedidoRepository : GenericIntRepository<Pedido>, IPedido
     {
+        private readonly ApiContext context;
         public PedidoRepository(ApiContext context) : base(context)
         {
+            this.context = context;
         }
     }
 }

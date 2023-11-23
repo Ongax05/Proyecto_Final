@@ -8,6 +8,7 @@ namespace Domain.Interfaces
 {
     public interface IPago : IGenericString<Pago>
     {
-        
+        Task<IEnumerable<Pago>> PagosEn2008Paypal();
+        Task<IEnumerable<Pago>> PosiblesEstadosDePago();
     }
 }

@@ -8,6 +8,9 @@ namespace Domain.Interfaces
 {
     public interface ICliente : IGenericInt<Cliente>
     {
-        
+        Task<IEnumerable<Cliente>> ClientesQueHanHechoPagosJuntoConRepInfo();
+        Task<IEnumerable<Cliente>> ClientesQueNoHanHechoPagosJuntoConRepInfo();
+        Task<IEnumerable<Cliente>> ClientesJuntoConRepInfo();
+        Task<IEnumerable<Cliente>> ClientesQueNoHanRealizadoPagos ();
     }
 }
