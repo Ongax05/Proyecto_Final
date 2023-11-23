@@ -1,3 +1,6 @@
+using System.Reflection;
+using Aplication.UnitOfWork;
+using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Persistency.Data;
 
@@ -13,7 +16,9 @@ internal class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
+        
+        builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+        builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
         builder.Services.AddDbContext<ApiContext>(opt=> {
             string CS = builder.Configuration.GetConnectionString("MySql");
             opt.UseMySql(CS, ServerVersion.AutoDetect(CS)); 
